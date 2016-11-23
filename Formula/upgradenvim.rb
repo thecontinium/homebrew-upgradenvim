@@ -1,7 +1,7 @@
 class Upgradenvim < Formula
   homepage 'https://github.com/thecontinium/homebrew-upgradenvim/'
   url 'https://github.com/thecontinium/homebrew-upgradenvim.git'
-  version '1.0.0'
+  version '1.0.1'
 
   skip_clean 'bin'
 
