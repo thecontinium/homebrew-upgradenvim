@@ -1,0 +1,8 @@
+#!/bin/bash
+brew upgrade
+brew reinstall --HEAD --with-release neovim
+pyenv activate neovim2
+pip install --upgrade neovim
+pyenv activate neovim3
+pip install --upgrade neovim
+pyenv deactivate
