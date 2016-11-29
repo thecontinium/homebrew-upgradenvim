@@ -1,8 +1,25 @@
 #!/usr/local/bin/zsh
-cd ~/Documents/code/neovim
-git pull origin
-make
-make install
+if [ $# -eq 0 ]; then
+    option="brew"
+else 
+    option="$1"
+fi
+echo $option
+
+if [ "$option" = "git" ]; then 
+    echo " Building from git"
+    cd ~/Documents/code/neovim
+    git pull origin
+    make
+    rm /usr/local/bin/nvim
+    rm -r /usr/local/share/nvim/
+    make install
+else
+    echo " Building from homebrew"
+    rm /usr/local/bin/nvim
+    rm -r /usr/local/share/nvim/
+    brew reinstall --HEAD neovim
+fi
 pyenv activate neovim2
 pip install --upgrade neovim
 pyenv activate neovim3
