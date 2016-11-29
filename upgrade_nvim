@@ -19,6 +19,7 @@ else
     rm /usr/local/bin/nvim
     rm -r /usr/local/share/nvim/
     brew reinstall --HEAD neovim
+    brew link --overwrite neovim
 fi
 pyenv activate neovim2
 pip install --upgrade neovim
