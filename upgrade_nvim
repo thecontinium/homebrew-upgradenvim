@@ -10,14 +10,15 @@ if [ "$option" = "git" ]; then
     echo " Building from git"
     cd ~/Documents/code/neovim
     git pull origin
-    make
     rm /usr/local/bin/nvim
-    rm -r /usr/local/share/nvim/
+    rm -rf /usr/local/share/nvim/
+    rm -f /usr/local/share/nvim
+    make
     make install
 else
     echo " Building from homebrew"
     rm /usr/local/bin/nvim
-    rm -r /usr/local/share/nvim/
+    rm -rf /usr/local/share/nvim/
     brew reinstall --HEAD neovim
     brew link --overwrite neovim
 fi
